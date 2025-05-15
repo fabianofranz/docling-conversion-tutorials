@@ -41,7 +41,7 @@ $ docling /path/to/document.pdf \
 
 ### Force OCR
 
-Depending on how a PDF document was structured upon its creation, the backend might not be able to effectively parse its layers and contents. That may happen even in documents containing pure text. In these cases, **forcing OCR** on the entire document usually produce better results.
+Depending on how a PDF document was structured upon its creation, the backend might not be able to effectively parse its layers and contents. That may happen even in documents apparently containing pure text. In these cases, **forcing OCR** on the entire document usually produce better results.
 
 ```bash
 $ docling /path/to/document.pdf \
@@ -76,7 +76,7 @@ $ docling /path/to/document.pdf \
 
 #### Image classification and description
 
-For documents heavy on **images**, the _picture classification_ step will understand the classes of pictures found in documents, like chart types, flow diagrams, logos, signatures, and so on; while the _picture description_ step will annotate (caption) pictures using a vision model.
+For documents heavy on **images**, the _picture classification_ step will understand the classes of pictures found in the document, like chart types, flow diagrams, logos, signatures, and so on; while the _picture description_ step will annotate (caption) pictures using a vision model.
 
 ```bash
 $ docling /path/to/document.pdf \
@@ -106,6 +106,12 @@ $ docling /path/to/document.pdf \
 
 Note that using a VLM significantly increases processing time, so using a GPU is strongly recommended. If you know the accelerator device of the machine where you're running the parsing, it might be a good idea to provide either `cuda` or `mps` in the `--device` option.
 
+TODO VLM with remote model service
+
 ### Other useful options
+
+TODO
+
+### Non-docling options
 
 TODO
