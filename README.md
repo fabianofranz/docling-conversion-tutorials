@@ -39,6 +39,8 @@ $ docling /path/to/document.pdf \
     --table-mode accurate
 ```
 
+A Python version of this conversion technique is available in [mostly_default_settings.py](./mostly_default_settings.py).
+
 ### Force OCR
 
 Depending on how a PDF document was structured upon its creation, the backend might not be able to effectively parse its layers and contents. That may happen even in documents apparently containing pure text. In these cases, **forcing OCR** on the entire document usually produce better results.
@@ -52,6 +54,8 @@ $ docling /path/to/document.pdf \
     --ocr-engine easyocr \
     --table-mode accurate
 ```
+
+A Python version of this conversion technique is available in [force_ocr.py](./force_ocr.py).
 
 ### Enrichment
 
@@ -91,6 +95,8 @@ $ docling /path/to/document.pdf \
     --enrich-picture-description
 ```
 
+A Python version of this conversion technique is available in [enrichment.py](./enrichment.py).
+
 ### VLM
 
 Docling supports the use of VLMs (Visual Language Models), which can be a good choice in cases where the previous conversion profiles didn't produce good results. The Docling team provides [SmolDocling](https://huggingface.co/ds4sd/SmolDocling-256M-preview), a small and fast model specifically targeted at document conversion. Other models can also be used, like [Granite Vision](https://huggingface.co/ibm-granite/granite-vision-3.1-2b-preview).
@@ -104,14 +110,8 @@ $ docling /path/to/document.pdf \
     --table-mode accurate
 ```
 
-Note that using a VLM significantly increases processing time, so using a GPU is strongly recommended. If you know the accelerator device of the machine where you're running the parsing, it might be a good idea to provide either `cuda` or `mps` in the `--device` option.
+A Python version of this conversion technique is available in [vlm.py](./vlm.py).
+
+Note that using a VLM significantly increases processing time, so running it on GPU is strongly recommended. If you know the accelerator device of the machine where you're running the parsing, it might be a good idea to provide either `cuda` or `mps` in the `--device` option.
 
 TODO VLM with remote model service
-
-### Other useful options
-
-TODO
-
-### Non-docling options
-
-TODO
